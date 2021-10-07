@@ -1,0 +1,113 @@
+.primary-color{
+    color: $primaryColor !important;
+}
+.bg-primary{
+    background-color: $primaryColor;
+}
+.font-clarence{
+    font-family: $clarence;
+}
+.nl-button{
+    border: none;
+    background-color: $primaryColor;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    line-height: 1;
+    text-transform: capitalize;
+    // font-family: 'Quicksand', sans-serif;
+    &._black{
+        background-color: black;
+        color: #fff;
+    }
+    &._white{
+        background-color: white;
+        color: #000;
+    }
+}
+.bg-black{
+    background-color: black;
+    color: #fff;
+}
+.big-title{
+    font-size: 4rem;
+}
+.nl-title{
+    font-size: 8rem;
+    line-height: 7rem;
+    &._white{
+        color: white;
+    }
+}
+.nl--title{
+    font-size: 2.8rem;
+}
+.nl---title{
+    font-size: 1.8rem;
+}
+.shape_btn{
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    img{
+        height: 200px;
+    }
+    ._txt{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
+.shape_btn.dark{
+    color: #fff;
+}
+._inline{
+    li{
+        display: inline-block; 
+    }
+}
+section{
+    position: relative;
+}
+.event-none{
+    pointer-events: none;
+}
+.grayscale{
+    filter: grayscale(100);
+}
+.z-index-back{
+    z-index: 5;
+}
+.z-index-front{
+    z-index: 20;
+}
+
+@media (max-width: 767px) {
+    .nl-title{
+        font-size: 2.6rem;
+    }
+    .nl--title{
+        font-size: 1.8rem;
+    }
+}
+
+/** MARQUEE **/
+.marquee{
+    width: 100%;
+    overflow: hidden;
+    transform: translateY(30px);
+    position: relative;
+    z-index: 20;
+    .running-text{
+        overflow: hidden;
+        white-space: nowrap;
+        color: #fff;
+        .marquee-child{
+            display: inline-block;
+            animation: marquee 26s linear infinite;
+        }
+    }
+}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
