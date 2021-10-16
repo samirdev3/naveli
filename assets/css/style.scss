@@ -415,31 +415,41 @@ header{
 /** contact **/
 #contact{
     background-color: white;
-    form{
-        margin-top: 3rem;
-        ._items{
-            margin-bottom: 3rem;
-            label{
-                color: $primaryColor;
-                text-transform: uppercase;
+}
+form{
+    margin-top: 3rem;
+    ._items{
+        margin-bottom: 3rem;
+        label{
+            color: $primaryColor;
+            text-transform: uppercase;
+
+            &.error{
+                color: red;
+                text-transform: none;
+                font-size: 90%;
+                font-style: italic;
             }
-            input,
-            textarea{
-                width: 100%;
-                padding: 15px 5px 5px 5px;
-                border: none;
-                border-bottom: 2px solid $primaryColor;
+        }
+        input,
+        textarea{
+            width: 100%;
+            padding: 15px 5px 5px 5px;
+            border: none;
+            border-bottom: 2px solid $primaryColor;
+            &:focus {
+                outline: none;
             }
-            input[type=checkbox]{
-                width: auto;
-            }
-            ._status{
-                display: none;
-                margin-top: 20px;
-                padding:10px;
-                background-color: black;
-                color: white;
-            }
+        }
+        input[type=checkbox]{
+            width: auto;
+        }
+        ._status{
+            display: none;
+            margin-top: 20px;
+            padding:10px;
+            background-color: black;
+            color: white;
         }
     }
 }

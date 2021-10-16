@@ -1,0 +1,25 @@
+<form id="lets-talk" action="forms/lets-talk.php" name="lets-talk" method="post" enctype="multipart/form-data" class="d-flex">
+    <div class="col col-12 col-md-6 _items">
+        <label for="fname">First Name <span>*</span></label>
+        <input type="text" name="fname" id="fname" placeholder="What's your first name?" required>
+    </div>
+    <div class="col col-12 col-md-6 _items">
+        <label for="lname">Last Name <span>*</span></label>
+        <input type="text" name="lname" id="lname" placeholder="What's your last name?" required>
+    </div>
+    <div class="col col-12 _items">
+        <label for="email">Email Address <span>*</span></label>
+        <input type="email" name="email" id="email" placeholder="Let me know your email so I can get back to you." required>
+    </div>
+    <div class="col col-12 _items">
+        <label for="collab">Project/Collaboration Details <span>*</span></label>
+        <textarea name="collab" id="collab" cols="30" rows="4" placeholder="We would love to hear your ideas"></textarea>
+    </div>
+    <div class="col col-12 _items">
+        <input type="checkbox" name="" id="lets-talk-agree"> I accept the terms & conditions and I understand that my data will be hold securely in accordance with the privacy policy.
+    </div>
+    <div class="col col-12 _items">
+        <button id="lets-talk-submit" type="submit" class="nl-button _black" disabled>Submit</button>
+        <p class="lets-talk-message _status">form submission status</p>
+    </div>
+</form>

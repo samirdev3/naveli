@@ -17,6 +17,7 @@
     line-height: 1;
     text-transform: capitalize;
     // font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
     &._black{
         background-color: black;
         color: #fff;
@@ -24,6 +25,10 @@
     &._white{
         background-color: white;
         color: #000;
+    }
+    &:disabled {
+        opacity: .5;
+        pointer-events: none;
     }
 }
 .bg-black{

@@ -342,7 +342,7 @@
                 <div class="col col-12 col-md-4 offset-md-6">
                     <h3 class="nl--title">Have a project in mind? get in touch, and let’s work together!</h3>
                     <p>Come and say hello at project naveli or tell us more about your project and organization by getting started below.</p>
-                    <buttton class="nl-button _black float-right">Get Started</buttton>
+                    <buttton onclick="formsPop('lets-talk')" class="nl-button _black float-right">Get Started</buttton>
                 </div>
             </div>
         </div>
@@ -358,7 +358,7 @@
             </div>
             <div class="col col-12">
                 <p>Fill the below form if you think your profile and experience match any of the below areas and we&#39;ll get in touch.</p>
-                <form action="#" name="" method="post" enctype="multipart/form-data" class="d-flex">
+                <form id="the-change" action="forms/the-change.php" name="the-change" method="post" enctype="multipart/form-data" class="d-flex">
                     <div class="col col-12 col-md-6 _items">
                         <label for="fname">First Name <span>*</span></label>
                         <input type="text" name="fname" id="fname" placeholder="What's your first name?" required>
@@ -372,15 +372,23 @@
                         <input type="email" name="email" id="email" placeholder="Let me know your email so I can get back to you." required>
                     </div>
                     <div class="col col-12 _items">
-                        <label for="message">Your Message <span>*</span></label>
-                        <textarea name="message" id="message" cols="30" rows="4" placeholder="Please enter your message here"></textarea>
+                        <label for="research">Research and drafting of the policy <span>*</span></label>
+                        <textarea name="research" id="research" cols="30" rows="4" placeholder="Please share your experience"></textarea>
                     </div>
                     <div class="col col-12 _items">
-                        <input type="checkbox" name="" id="" required> I accept the terms & conditions and I understand that my data will be hold securely in accordance with the privacy policy.
+                        <label for="socialmedia">Social Media (Content planning and execution) <span>*</span></label>
+                        <textarea name="socialmedia" id="socialmedia" cols="30" rows="4" placeholder="Please share your experience"></textarea>
                     </div>
                     <div class="col col-12 _items">
-                        <button id="" type="submit" class="nl-button _black">Submit</button>
-                        <p class="reach-out-message _status">form submission status</p>
+                        <label for="design">Design (posters, posts, videos for online and on-ground) <span>*</span></label>
+                        <textarea name="design" id="design" cols="30" rows="4" placeholder="Please share your experience"></textarea>
+                    </div>
+                    <div class="col col-12 _items">
+                        <input type="checkbox" name="" id="the-change-agree"> I accept the terms & conditions and I understand that my data will be hold securely in accordance with the privacy policy.
+                    </div>
+                    <div class="col col-12 _items">
+                        <button id="the-change-submit" type="submit" class="nl-button _black" disabled>Submit</button>
+                        <p class="the-change-message _status">form submission status</p>
                     </div>
                 </form>
             </div>
@@ -455,105 +463,14 @@
 <script src="assets/slick/slick.min.js"></script>
 <link rel="stylesheet" href="assets/slick/slick.css">
 <link rel="stylesheet" href="assets/slick/slick-theme.css">
-<script>
-jQuery(document).ready(function(){
-    /** project slider */
-    jQuery('.project-slide-thumb').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.project-slide'
-    });
-    jQuery('.project-slide').slick({
-        autoplay: false,
-        autoplaySpeed: 3000,
-        dots: false,
-        prevArrow: jQuery('.project-arrow ._left'),
-        nextArrow: jQuery('.project-arrow ._right'),
-        asNavFor: '.project-slide-thumb',
-    });
-    /** news slider */
-    jQuery('.news-slide-thumb').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.news-slide'
-    });
-    jQuery('.news-slide').slick({
-        autoplay: false,
-        autoplaySpeed: 3000,
-        dots: false,
-        prevArrow: jQuery('.news-arrow ._left'),
-        nextArrow: jQuery('.news-arrow ._right'),
-        asNavFor: '.news-slide-thumb',
-    });
-});
-</script>
+<script src="assets/js/slick-script.js"></script>
 <!-- drag -->
-<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-<script>
-    jQuery(document).ready(function(){
-        // target elements with the "draggable" class
-        interact('._draggable')
-        .draggable({
-            // enable inertial throwing
-            inertia: true,
-            // keep the element within the area of it's parent
-            modifiers: [
-            interact.modifiers.restrictRect({
-                restriction: 'parent',
-                endOnly: true
-            })
-            ],
-            // enable autoScroll
-            autoScroll: true,
-
-            listeners: {
-            // call this function on every dragmove event
-            move: dragMoveListener,
-            }
-        })
-
-        function dragMoveListener (event) {
-        var target = event.target
-        // keep the dragged position in the data-x/data-y attributes
-        var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-        var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
-        // translate the element
-        target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
-
-        // update the posiion attributes
-        target.setAttribute('data-x', x)
-        target.setAttribute('data-y', y)
-        }
-
-        // this function is used later in the resizing and gesture demos
-        window.dragMoveListener = dragMoveListener
-
-        //layer click
-        jQuery("#impact ._draggable").click(function(){
-            jQuery(this).siblings().css({"z-index":0});
-            jQuery(this).css({"z-index":2});
-        });
-    });
-</script>
-
-<script>
-var project = jQuery('#projects-modal');
-var projectModal = jQuery('#projects-modal .modal');
-function projectHTML(a){
-    projectModal.load('projects/project-'+a+'.html');
-    project.addClass('active');
-    jQuery('body').addClass('no-scroll');
-}
-function projectClose(){
-    projectModal.html('');
-    project.removeClass('active');
-    jQuery('body').removeClass('no-scroll');
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" defer></script>
+<script src="assets/js/impact.js" defer></script>
+<!-- form -->
+<script src="assets/js/jquery-validate.min.js" defer></script>
+<script src="assets/js/form-submit.js" defer></script>
+<!-- main script -->
+<script src="assets/js/main-script.js" defer></script>
 </body>
 </html>
