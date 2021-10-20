@@ -91,6 +91,15 @@ function createWaves($class, $color){
 };
 
 jQuery(document).ready(function(){
+    /** menu scroll */
+    jQuery('.menu a').click(function(e){
+        e.preventDefault();
+        var target = jQuery(jQuery(this).attr('href'));
+        if(target.length){
+          var scrollTo = target.offset().top;
+          jQuery('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+        }
+      });
     /** marquee text */
     var mqchild = jQuery('.running-text');
     mqchild.each(function(index){

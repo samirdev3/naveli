@@ -3,7 +3,7 @@ require('../phpmailer/class.phpmailer.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	//form variables
-	$sendFormTo = array('samir@tetramind.asia');
+	$sendFormTo = array('samir@tetramind.asia','projectnaveli@gmail.com');
 	// $apipassword = '';
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
