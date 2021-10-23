@@ -92,7 +92,7 @@ function createWaves($class, $color){
 
 jQuery(document).ready(function(){
     /** menu scroll */
-    jQuery('.menu a').click(function(e){
+    jQuery('.menu a, .foot_menu a').click(function(e){
         e.preventDefault();
         var target = jQuery(jQuery(this).attr('href'));
         if(target.length){
