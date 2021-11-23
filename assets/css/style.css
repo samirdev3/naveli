@@ -625,6 +625,7 @@ img {
   border-radius: 20px;
   line-height: 1;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .nl-button._black {
@@ -635,6 +636,11 @@ img {
 .nl-button._white {
   background-color: white;
   color: #000;
+}
+
+.nl-button:disabled {
+  opacity: .5;
+  pointer-events: none;
 }
 
 .bg-black {
@@ -649,6 +655,13 @@ img {
 .nl-title {
   font-size: 8rem;
   line-height: 7rem;
+}
+
+@media all and (max-width: 767px) {
+  .nl-title {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
 }
 
 .nl-title._white {
@@ -708,15 +721,6 @@ section {
 
 .z-index-front {
   z-index: 20;
-}
-
-@media (max-width: 767px) {
-  .nl-title {
-    font-size: 2.6rem;
-  }
-  .nl--title {
-    font-size: 1.8rem;
-  }
 }
 
 /** MARQUEE **/
@@ -986,6 +990,13 @@ header .menu li a {
   z-index: 10;
 }
 
+@media all and (max-width: 767px) {
+  #banner .nl-title {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
+
 #banner ._img {
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
@@ -1010,6 +1021,13 @@ header .menu li a {
           align-items: center;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
+}
+
+@media all and (max-width: 767px) {
+  #banner ._down {
+    position: relative;
+    bottom: 0;
+  }
 }
 
 #banner ._down .arrows {
@@ -1102,6 +1120,12 @@ header .menu li a {
   padding: 0 4rem 3rem 4rem;
 }
 
+@media all and (max-width: 767px) {
+  #projects ._box {
+    padding: 0 2rem 3rem 2rem;
+  }
+}
+
 #projects ._box ._title {
   text-transform: uppercase;
   color: white;
@@ -1179,6 +1203,12 @@ header .menu li a {
   display: block;
 }
 
+@media all and (max-width: 767px) {
+  #projects .project-arrow ._arrow._right::before, #projects .project-arrow ._arrow._right::after {
+    display: none;
+  }
+}
+
 /** impact **/
 #impact {
   background-image: url(../images/temp/impact.png);
@@ -1201,6 +1231,18 @@ header .menu li a {
   position: absolute;
 }
 
+@media all and (max-width: 767px) {
+  #impact ._drag-box ._draggable {
+    position: relative;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100%;
+    max-width: inherit;
+    margin-bottom: 15px;
+  }
+}
+
 #impact ._drag-box ._draggable._txt ._item {
   background: linear-gradient(115deg, #e8d0bd 30%, #d48656);
   position: relative;
@@ -1208,11 +1250,24 @@ header .menu li a {
           box-shadow: 0 4px 22px rgba(0, 0, 0, 0.11);
 }
 
+@media all and (max-width: 767px) {
+  #impact ._drag-box ._draggable._txt ._item {
+    -webkit-transform: rotate(0) !important;
+            transform: rotate(0) !important;
+  }
+}
+
 #impact ._drag-box ._draggable._txt ._item::before {
   content: '';
   padding-top: 100%;
   width: 100%;
   display: block;
+}
+
+@media all and (max-width: 767px) {
+  #impact ._drag-box ._draggable._txt ._item::before {
+    padding-top: 60%;
+  }
 }
 
 #impact ._drag-box ._draggable._txt ._item ._box {
@@ -1236,7 +1291,15 @@ header .menu li a {
 
 #impact ._drag-box ._draggable._txt ._item ._box ._title {
   font-family: "bebasneue";
-  font-size: 3rem;
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+#impact ._drag-box ._draggable._txt ._item ._box ._title span {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 #impact ._drag-box ._draggable._txt ._item ._box ._footer {
@@ -1248,9 +1311,22 @@ header .menu li a {
   max-width: 300px;
 }
 
+@media all and (max-width: 767px) {
+  #impact ._drag-box ._draggable._img {
+    max-width: inherit;
+  }
+}
+
 #impact ._drag-box ._draggable._img ._item {
   -webkit-box-shadow: 0 4px 22px rgba(0, 0, 0, 0.11);
           box-shadow: 0 4px 22px rgba(0, 0, 0, 0.11);
+}
+
+@media all and (max-width: 767px) {
+  #impact ._drag-box ._draggable._img ._item {
+    -webkit-transform: rotate(0) !important;
+            transform: rotate(0) !important;
+  }
 }
 
 #impact ._drag-box ._draggable._img ._item img {
@@ -1264,6 +1340,7 @@ header .menu li a {
 #news {
   background-color: #e9e5e2;
   padding-bottom: 12rem;
+  overflow: hidden;
 }
 
 #news ._title {
@@ -1314,6 +1391,11 @@ header .menu li a {
   background-position: -25px 0;
 }
 
+#news .news-slide-thumb ._avatar {
+  max-height: 420px;
+  margin: 0 auto;
+}
+
 /** instagram **/
 #instagram {
   background-color: #ff9022;
@@ -1350,6 +1432,13 @@ header .menu li a {
   padding-top: 5rem;
 }
 
+@media all and (max-width: 767px) {
+  #talk .bg-text {
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+}
+
 #talk ._absolute {
   position: absolute;
   top: 50%;
@@ -1360,37 +1449,58 @@ header .menu li a {
           transform: translateY(-50%);
 }
 
+@media all and (max-width: 767px) {
+  #talk ._absolute {
+    position: relative;
+    padding: 2rem 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 /** contact **/
 #contact {
   background-color: white;
 }
 
-#contact form {
+form {
   margin-top: 3rem;
 }
 
-#contact form ._items {
+form ._items {
   margin-bottom: 3rem;
 }
 
-#contact form ._items label {
+form ._items label {
   color: #ff9022;
   text-transform: uppercase;
 }
 
-#contact form ._items input,
-#contact form ._items textarea {
+form ._items label.error {
+  color: red;
+  text-transform: none;
+  font-size: 90%;
+  font-style: italic;
+}
+
+form ._items input,
+form ._items textarea {
   width: 100%;
   padding: 15px 5px 5px 5px;
   border: none;
   border-bottom: 2px solid #ff9022;
 }
 
-#contact form ._items input[type=checkbox] {
+form ._items input:focus,
+form ._items textarea:focus {
+  outline: none;
+}
+
+form ._items input[type=checkbox] {
   width: auto;
 }
 
-#contact form ._items ._status {
+form ._items ._status {
   display: none;
   margin-top: 20px;
   padding: 10px;
